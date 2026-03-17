@@ -5,12 +5,15 @@ library(tidyverse)
 library(grid)
 library(gridBase)
 
+# Set working directory
+setwd("~/GitHub/CO2Emissions")
+
 # Load data
-data <- read.csv("https://raw.githubusercontent.com/TrevorHD/CO2/master/Data/EmissionsByCountry.csv")
+data <- read.csv("Data/CO2Data.csv")
 
 # Remove irrelevant columns; rename country name column
 data %>% select(-"Country.Code", -"Indicator.Name", -"Indicator.Code") %>% 
-         rename("Country" = "ï..Country.Name") -> data
+         rename("Country" = "?..Country.Name") -> data
 
 # Remove the following non-countries
 # Must do it manually since there really isn't a better way
@@ -206,7 +209,7 @@ data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
 ##### Plot all graphs in one visualisation ----------------------------------------------------------------
 
 # Prepare graphics device
-jpeg(filename = "CO2Plots.jpeg", width = 2000, height = 1500, units = "px")
+jpeg(filename = "Figures/CO2Plots.jpeg", width = 2000, height = 1500, units = "px")
 
 # Create blank page
 grid.newpage()

@@ -13,6 +13,9 @@ urlcolor: blue
 
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 
+# Set working directory
+setwd("~/GitHub/CO2Emissions")
+
 ```
 
 ```{r eval = TRUE, echo = FALSE, out.width = "470px", out.height = "470px", fig.pos = "!t"}
