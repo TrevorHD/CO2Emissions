@@ -11,16 +11,18 @@ urlcolor: blue
 
 ```{r setup, include = FALSE}
 
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
-
 # Set working directory
 setwd("~/GitHub/CO2Emissions")
+
+# Set chunk options
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 
 ```
 
 ```{r eval = TRUE, echo = FALSE, out.width = "470px", out.height = "470px", fig.pos = "!t"}
 
-knitr::include_graphics("Figures/CO2Plots.jpeg")
+# Load plot from file
+knitr::include_graphics("Figures/CO2_Plots.jpeg")
 
 ```
 
@@ -36,3 +38,4 @@ Note that the emissions shown here are expressed in absolute terms rather than o
 [^FootNote1]: Annual CO$_{2}$ emissions data can be found at https://data.worldbank.org/indicator/EN.ATM.CO2E.KT.
 
 [^FootNote2]: Per-capita CO$_{2}$ emissions data can be found at https://data.worldbank.org/indicator/EN.ATM.CO2E.PC.
+

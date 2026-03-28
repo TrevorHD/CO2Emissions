@@ -9,7 +9,7 @@ library(gridBase)
 setwd("~/GitHub/CO2Emissions")
 
 # Load data
-data <- read.csv("Data/CO2Data.csv")
+data <- read.csv("Data/CO2_Data.csv")
 
 # Remove irrelevant columns; rename country name column
 data %>% select(-"Country.Code", -"Indicator.Name", -"Indicator.Code") %>% 
@@ -209,7 +209,7 @@ data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
 ##### Plot all graphs in one visualisation ----------------------------------------------------------------
 
 # Prepare graphics device
-jpeg(filename = "Figures/CO2Plots.jpeg", width = 2000, height = 1500, units = "px")
+jpeg(filename = "Figures/CO2_Plots.jpeg", width = 2000, height = 1500, units = "px")
 
 # Create blank page
 grid.newpage()
@@ -263,7 +263,4 @@ grid.text("Image Source: Trevor H. Drees",
 # Deactivate grid layout; finalise graphics save
 popViewport()
 dev.off()
-
-# Note that graphics device may vary between computers
-# Thus, adjustments may need to be made to this code section
 
